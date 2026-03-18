@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playground · TSAD Deep Study</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="/"
+            ><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a
+          >
+          <nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <article class="panel hero-card">
+              <div class="eyebrow">Math-Teacher inspired playground</div>
+              <h1>읽고 끝내지 말고, 맞혀 보면서 고정하기</h1>
+              <p class="lead">
+                여기는 <strong>$math-teacher</strong> 감성으로 만든 학습 고정
+                구간입니다. 로컬 브라우저에 점수, streak, 방문 페이지 수가
+                저장됩니다. 스터디 전에 quick test로 돌리거나 발표 리허설 전에
+                기억을 다시 깨우는 용도로 좋습니다.
+              </p>
+              <div class="badge" data-progress-summary></div>
+              <div class="progress-bar progress-bar-spaced">
+                <div class="progress-fill" data-progress-fill></div>
+              </div>
+              <div class="grid-3 stack-top-md">
+                <div class="kpi">
+                  <span class="badge">점수</span>
+                  <div class="value" data-score>0</div>
+                  <div>정답마다 +10</div>
+                </div>
+                <div class="kpi">
+                  <span class="badge">Streak</span>
+                  <div class="value" data-streak>0</div>
+                  <div>연속 정답 기록</div>
+                </div>
+                <div class="kpi">
+                  <span class="badge">Visited</span>
+                  <div class="value" data-visited>0/12</div>
+                  <div>학습 경로 완주도</div>
+                </div>
+              </div>
+              <div class="actions">
+                <a class="btn primary" data-next-route href="/"
+                  >다음 미방문 페이지로 이동</a
+                ><button class="btn" type="button" data-reset-progress>
+                  진행도 초기화
+                </button>
+              </div>
+            </article>
+            <article class="panel hero-card">
+              <img
+                src="../assets/images/paper/benchmark-summary.jpg"
+                alt="study summary figure"
+              />
+              <p class="source-note source-note-spaced">
+                원문 PDF에서 추출한 figure를 배경으로 두어 기억 단서를
+                강화했습니다.
+              </p>
+              <div class="result-box result-box-spaced">
+                <strong>오늘의 미션 상태</strong>
+                <div class="small muted stack-top-sm" data-mission-summary>
+                  초기화 후 첫 문제를 풀어 학습 루프를 시작해 보세요.
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section>
+          <div class="container"><div data-quiz></div></div>
+        </section>
+        <section>
+          <div class="container grid-3">
+            <article class="card">
+              <div class="section-head section-head-compact">
+                <div>
+                  <div class="eyebrow">Mission board</div>
+                  <h2 class="section-title section-title-compact">
+                    완주 체크리스트
+                  </h2>
+                </div>
+              </div>
+              <div data-mission-board></div>
+            </article>
+            <article class="card">
+              <div class="section-head section-head-compact">
+                <div>
+                  <div class="eyebrow">Achievements</div>
+                  <h2 class="section-title section-title-compact">해금 배지</h2>
+                </div>
+              </div>
+              <div data-achievement-board></div>
+            </article>
+            <article class="card">
+              <div class="section-head section-head-compact">
+                <div>
+                  <div class="eyebrow">Quiz stats</div>
+                  <h2 class="section-title section-title-compact">
+                    현재 러닝 상태
+                  </h2>
+                </div>
+              </div>
+              <div data-quiz-stats></div>
+            </article>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Flashcards</div>
+                <h2 class="section-title">핵심 문장을 뒤집어 보며 기억하기</h2>
+              </div>
+            </div>
+            <div class="flash-grid" data-flashcards></div>
+          </div>
+        </section>
+        <section>
+          <div class="container grid-2">
+            <article class="card">
+              <h3>스터디 미션</h3>
+              <ul>
+                <li>Background에서 anomaly 3종을 다시 설명할 수 있는가?</li>
+                <li>Methods에서 모델 family를 세 축으로 분해할 수 있는가?</li>
+                <li>
+                  Benchmarks에서 WADI가 왜 어려운지 한 문장으로 말할 수 있는가?
+                </li>
+                <li>
+                  Guidelines에서 real-time과 early warning의 차이를 operational
+                  language로 설명할 수 있는가?
+                </li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>완료 조건</h3>
+              <ul>
+                <li>점수 30점 이상</li>
+                <li>streak 3 이상</li>
+                <li>전체 URI 12개 중 12개 방문</li>
+              </ul>
+              <p class="muted">
+                발표 준비용이라면 이 세 조건을 통과하면 핵심 흐름이 머릿속에
+                다시 살아납니다.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="panel footer-card">
+            완주 후 다시 <a href="/"><strong>Overview</strong></a
+            >로 돌아가 전체 흐름을 한 번 더 훑어보세요. 막히는 용어는 <a href="/glossary/"><strong>Glossary</strong></a>, provenance는 <a href="/about-paper/"><strong>About Paper</strong></a>에서 보강할 수 있습니다.
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

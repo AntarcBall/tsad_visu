@@ -1,0 +1,99 @@
+{
+  "pages": [
+    {
+      "route": "/applications/",
+      "file": "applications/index.html",
+      "title": "Applications · TSAD Deep Study",
+      "link_count": 11,
+      "image_count_static": 1,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/background/",
+      "file": "background/index.html",
+      "title": "Background · TSAD Deep Study",
+      "link_count": 10,
+      "image_count_static": 0,
+      "broken_refs": [],
+      "notes": [
+        "Background anomaly tabs inject three Figure 1 crops via assets/js/data.js"
+      ]
+    },
+    {
+      "route": "/benchmarks/",
+      "file": "benchmarks/index.html",
+      "title": "Benchmarks · TSAD Deep Study",
+      "link_count": 10,
+      "image_count_static": 2,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/guidelines/",
+      "file": "guidelines/index.html",
+      "title": "Guidelines · TSAD Deep Study",
+      "link_count": 10,
+      "image_count_static": 2,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/",
+      "file": "index.html",
+      "title": "TSAD Deep Study · Deep Learning for Anomaly Detection in Time-Series Data",
+      "link_count": 19,
+      "image_count_static": 4,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/methods/",
+      "file": "methods/index.html",
+      "title": "Methods · TSAD Deep Study",
+      "link_count": 10,
+      "image_count_static": 4,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/paper-map/",
+      "file": "paper-map/index.html",
+      "title": "Paper Map · TSAD Deep Study",
+      "link_count": 10,
+      "image_count_static": 1,
+      "broken_refs": [],
+      "notes": []
+    },
+    {
+      "route": "/playground/",
+      "file": "playground/index.html",
+      "title": "Playground · TSAD Deep Study",
+      "link_count": 11,
+      "image_count_static": 1,
+      "broken_refs": [],
+      "notes": []
+    }
+  ],
+  "site_summary": {
+    "built_routes": [
+      "/",
+      "/applications/",
+      "/background/",
+      "/benchmarks/",
+      "/guidelines/",
+      "/methods/",
+      "/paper-map/",
+      "/playground/"
+    ],
+    "missing_against_worker2_ia": [
+      "/problem-space/",
+      "/classical-limitations/",
+      "/taxonomy/",
+      "/figures/",
+      "/glossary/",
+      "/about-paper/"
+    ],
+    "note": "Current build uses /background/, /methods/, /paper-map/ instead of the richer IA names proposed in extracted/worker-2-study-site-routes.json."
+  }
+}

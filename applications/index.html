@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Applications · TSAD Deep Study</title><link rel="stylesheet" href="../assets/css/style.css"></head>
+<body>
+<div class="page-shell">
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="/"><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a><nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><article class="panel hero-card"><div class="eyebrow">Industrial applications</div><h1>왜 Time-Series anomaly detection이 산업 현장에서 중요한가</h1><p class="lead">논문은 smart manufacturing, smart energy management, cloud computing system, structural health monitoring 같은 실제 domain을 통해 anomaly detection의 stakes를 보여줍니다. 핵심은 “이상 탐지 성능” 자체보다, <strong>사고·정지·비용 손실을 줄이는 operational leverage</strong>입니다.</p><div class="insight-banner">산업 현장에서는 false positive도 비용이고, missed anomaly는 더 큰 비용입니다. 그래서 benchmark 숫자만이 아니라 운영 맥락을 같이 읽어야 합니다.</div></article><article class="panel figure-card"><img src="../assets/images/paper/industrial-apps.jpg" alt="industrial applications figure extracted from PDF"><div class="figure-meta"><h3>실제 센서/설비 컨텍스트</h3><p class="figure-caption">paper는 설비, 물류, infrastructure, cloud system, structural monitoring 등 다양한 time-series source를 사례로 소개합니다.</p></div></article></div></section>
+<section><div class="container timeline"><article class="timeline-item"><div class="timeline-label">Manufacturing</div><div><h3>Production equipment / infrastructure / logistics</h3><p class="muted">설비 이상은 yield loss, unscheduled downtime, safety issue로 직결됩니다. 센서·actuator·control process의 상호작용이 강해 multivariate relation modeling이 중요합니다.</p></div></article><article class="timeline-item"><div class="timeline-label">Energy</div><div><h3>Electric power / treated water / manufactured gas</h3><p class="muted">공공 인프라성 시스템은 false negative의 비용이 매우 큽니다. 조기 경보(<span class="codeish">early warning</span>)와 real-time detection의 밸런스를 세심하게 잡아야 합니다.</p></div></article><article class="timeline-item"><div class="timeline-label">Cloud</div><div><h3>Server machine / network / cybersecurity</h3><p class="muted">서비스 연속성과 보안이 엮여 있어 anomaly score를 단순 알람이 아닌 운영 지표로 설계해야 합니다.</p></div></article><article class="timeline-item"><div class="timeline-label">SHM</div><div><h3>Structural health monitoring</h3><p class="muted">bridge, building, infrastructure monitoring은 드문 고장과 장기적인 degradation pattern을 함께 다뤄야 하므로 predictive setup의 중요성이 큽니다.</p></div></article></div></section>
+<section><div class="container grid-3"><article class="card"><h3>이 페이지의 takeaway</h3><ul><li><strong>same algorithm, different stakes</strong>: 같은 F1-score라도 산업 도메인에 따라 의미가 달라집니다.</li><li><strong>sensor relation</strong>: 물리적으로 연결된 센서군은 graph-like relation을 가집니다.</li><li><strong>maintenance economics</strong>: anomaly detection은 결국 운영비 최적화와 이어집니다.</li></ul></article><article class="card"><h3>현업 질문으로 바꾸기</h3><ul><li>지금 필요한 것이 <strong>실시간 알람</strong>인지, <strong>조기 경보</strong>인지?</li><li>attribute 간 상호작용이 강한지?</li><li>설명 가능한 root-cause path가 중요한지?</li></ul></article><article class="card"><h3>다음으로 넘어가기</h3><p class="muted">이제 어떤 산업 맥락이든 결국 모델을 고를 때는 세 축—<strong>inter-correlation</strong>, <strong>temporal context</strong>, <strong>anomaly criteria</strong>—로 정리하게 됩니다.</p><a class="btn" href="/methods/">Methods Explorer로 이동</a></article></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="panel footer-card">다음 페이지: <a href="/methods/"><strong>Methods Explorer</strong></a> · 관련 시각 자료는 <a href="/figures/"><strong>Figures</strong></a>에서 다시 훑을 수 있습니다</div></div></footer>
+</div>
+<script src="../assets/js/data.js"></script><script src="../assets/js/site.js"></script>
+</body></html>

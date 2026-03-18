@@ -1,0 +1,203 @@
+{
+  "paper": {
+    "title": "Deep Learning for Anomaly Detection in Time-Series Data: Review, Analysis, and Guidelines",
+    "doi": "10.1109/ACCESS.2021.3107975"
+  },
+  "figure_assets": [
+    {
+      "asset": "assets/images/paper/anomaly-wave-1.jpg",
+      "paper_figure": 1,
+      "caption_summary": "Anomaly types in time-series data. (point crop)",
+      "paper_caption_reference": "Anomaly types in time-series data.",
+      "source_extracted_file": "extracted/pdf_images/img-002.jpg",
+      "sha256": "3f338b7cde4ea10145f0b3f805ff08d3196e6406499fe9c5ab5847ec6c291aab",
+      "used_on_routes": [
+        "/background/#js-tabs"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/anomaly-wave-2.jpg",
+      "paper_figure": 1,
+      "caption_summary": "Anomaly types in time-series data. (contextual crop)",
+      "paper_caption_reference": "Anomaly types in time-series data.",
+      "source_extracted_file": "extracted/pdf_images/img-003.jpg",
+      "sha256": "a9d156334744a6991a8550b1a8764575ffdf8ac2804c48012efe0aa63c2a3f9d",
+      "used_on_routes": [
+        "/background/#js-tabs"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/anomaly-wave-3.jpg",
+      "paper_figure": 1,
+      "caption_summary": "Anomaly types in time-series data. (collective crop)",
+      "paper_caption_reference": "Anomaly types in time-series data.",
+      "source_extracted_file": "extracted/pdf_images/img-004.jpg",
+      "sha256": "111aa312740a9523dd155896936a27bb995c64724e422a4b8bc21cd5acfc281f",
+      "used_on_routes": [
+        "/",
+        "/background/#js-tabs"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/industrial-apps.jpg",
+      "paper_figure": 2,
+      "caption_summary": "The examples by equipment type: production equipment / infrastructure / logistics / etc.",
+      "paper_caption_reference": "The examples by equipment type: (a) A production equipment",
+      "source_extracted_file": "extracted/pdf_images/img-026.jpg",
+      "sha256": "bb282219575b5872fba5e251d46515f4404e3aaca89d8650851e5b9791acb7e5",
+      "used_on_routes": [
+        "/applications/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/graph-attention.jpg",
+      "paper_figure": 6,
+      "caption_summary": "A mechanism of graph attention layer.",
+      "paper_caption_reference": "A mechanism of graph attention layer. Red circle is the final",
+      "source_extracted_file": "extracted/pdf_images/img-030.jpg",
+      "sha256": "d7bae85015e0e068e2efa8c34f3c44894e5f9080ef5a7d4f7bf4ff10ddaa3226",
+      "used_on_routes": [
+        "/methods/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/benchmark-summary.jpg",
+      "paper_figure": 5,
+      "caption_summary": "A taxonomy of recent deep learning-based TSAD methods.",
+      "paper_caption_reference": "A taxonomy of recent deep learning-based time-series anomaly detection methods. HTM, hierarchical temporal memory; RNN, recurrent",
+      "source_extracted_file": "extracted/pdf_images/img-032.jpg",
+      "sha256": "ad5c2b1da1566602866954da581932af7a0c60a255bce4fbe8a09fb3296be0e0",
+      "used_on_routes": [
+        "/",
+        "/paper-map/",
+        "/playground/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/dilated-rnn.jpg",
+      "paper_figure": 7,
+      "caption_summary": "An example of a three-layer dilated RNN.",
+      "paper_caption_reference": "An example of a three-layer dilated RNN with dilation 1, 2,",
+      "source_extracted_file": "extracted/pdf_images/img-035.jpg",
+      "sha256": "d6538d1e42a367d380bbb689c92deb138f6aca2842e2e0d3341bff2c251abaef",
+      "used_on_routes": [
+        "/",
+        "/methods/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/latent-reconstruction.jpg",
+      "paper_figure": 8,
+      "caption_summary": "Anomaly criteria example: reconstruction error.",
+      "paper_caption_reference": "The examples of each type of anomaly criteria: (a) a reconstruction error; (b) a prediction error; and (c) a dissimilarity.",
+      "source_extracted_file": "extracted/pdf_images/img-037.jpg",
+      "sha256": "d25a24210b7e8da16bec34a80b78702a9e90d767bd00ac6a2e69cb43c58e6f83",
+      "used_on_routes": [
+        "/methods/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/dissimilarity-space.jpg",
+      "paper_figure": 8,
+      "caption_summary": "Anomaly criteria example: dissimilarity.",
+      "paper_caption_reference": "The examples of each type of anomaly criteria: (a) a reconstruction error; (b) a prediction error; and (c) a dissimilarity.",
+      "source_extracted_file": "extracted/pdf_images/img-039.jpg",
+      "sha256": "e3771e9b0846795834e60ce95fcb4b79828de4d2f16f011a908ad8b5b87ef352",
+      "used_on_routes": [
+        "/methods/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/results-bars-blue.jpg",
+      "paper_figure": 9,
+      "caption_summary": "Experimental results on SWaT and MSL.",
+      "paper_caption_reference": "Experimental results on SWaT and MSL. The RNN-based and",
+      "source_extracted_file": "extracted/pdf_images/img-043.jpg",
+      "sha256": "d864d2c6261846c545378c5fe96abd97614ff7bd6e6be9a17c57c84ec93f10c4",
+      "used_on_routes": [
+        "/",
+        "/benchmarks/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/results-bars-gold.png",
+      "paper_figure": 10,
+      "caption_summary": "Experimental results on SWaT, MSL, and WADI.",
+      "paper_caption_reference": "Experimental results on SWaT, MSL, and WADI. The",
+      "source_extracted_file": "extracted/pdf_images/img-044.png",
+      "sha256": "0daf8c5ede152a04d27ee4ac3bfa19d393568c513f23dfa639d6e72c35e01570",
+      "used_on_routes": [
+        "/benchmarks/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/strategy-realtime.jpg",
+      "paper_figure": 11,
+      "caption_summary": "Strategies for anomaly detection in time-series data. (real-time crop)",
+      "paper_caption_reference": "Strategies for anomaly detection in time-series data.",
+      "source_extracted_file": "extracted/pdf_images/img-046.jpg",
+      "sha256": "b6672e767873c28ed0ba6ebae7b62c8fbb4a210d9b2a38dab853dd9b65cd5781",
+      "used_on_routes": [
+        "/guidelines/"
+      ]
+    },
+    {
+      "asset": "assets/images/paper/strategy-warning.jpg",
+      "paper_figure": 11,
+      "caption_summary": "Strategies for anomaly detection in time-series data. (early warning crop)",
+      "paper_caption_reference": "Strategies for anomaly detection in time-series data.",
+      "source_extracted_file": "extracted/pdf_images/img-047.jpg",
+      "sha256": "be9eaefbaa875aa25dc981c0bcde0143e592a324181213c663342d058b012737",
+      "used_on_routes": [
+        "/guidelines/"
+      ]
+    }
+  ],
+  "unused_extracted_pdf_images": [
+    "img-000.png",
+    "img-001.png",
+    "img-005.png",
+    "img-006.png",
+    "img-007.png",
+    "img-008.png",
+    "img-009.png",
+    "img-010.png",
+    "img-011.png",
+    "img-012.jpg",
+    "img-013.jpg",
+    "img-014.png",
+    "img-015.png",
+    "img-016.png",
+    "img-017.png",
+    "img-018.png",
+    "img-019.png",
+    "img-020.png",
+    "img-021.png",
+    "img-022.jpg",
+    "img-023.jpg",
+    "img-024.jpg",
+    "img-025.png",
+    "img-027.png",
+    "img-028.png",
+    "img-029.png",
+    "img-031.png",
+    "img-033.png",
+    "img-034.png",
+    "img-036.png",
+    "img-038.jpg",
+    "img-040.png",
+    "img-041.png",
+    "img-042.png",
+    "img-045.png",
+    "img-048.png",
+    "img-049.png",
+    "img-050.png",
+    "img-051.png",
+    "img-052.png",
+    "img-053.png",
+    "img-054.png",
+    "img-055.png",
+    "img-056.png",
+    "img-057.png"
+  ]
+}

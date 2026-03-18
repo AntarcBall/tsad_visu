@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Benchmarks · TSAD Deep Study</title><link rel="stylesheet" href="../assets/css/style.css"></head>
+<body>
+<div class="page-shell">
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="/"><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a><nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><article class="panel hero-card"><div class="eyebrow">Benchmarks</div><h1>SWaT · WADI · MSL을 어떻게 읽어야 하는가</h1><p class="lead">이 논문은 public dataset 세 개를 통해 state-of-the-art model을 비교합니다. 중요한 건 “누가 이겼는가”보다 <strong>왜 특정 dataset에서 어떤 family가 강해졌는가</strong>를 이해하는 것입니다.</p><div class="callout">Paper takeaway: temporal dependency를 무시한 non-temporal baseline보다 sequence-aware model이 대체로 낫지만, dataset dimension과 relation strength에 따라 판도가 바뀝니다.</div></article><article class="panel figure-card"><img src="../assets/images/paper/results-bars-blue.jpg" alt="benchmark result figure blue"><div class="figure-meta"><h3>Result lens</h3><p class="figure-caption">논문은 F1-score를 baseline으로 정렬하되, Recall과 point adjustment가 실제 해석에 미치는 영향도 함께 설명합니다.</p></div></article></div></section>
+<section><div class="container"><div class="dataset-grid" data-dataset-grid></div></div></section>
+<section><div class="container grid-2"><article class="figure-thumb"><img src="../assets/images/paper/results-bars-gold.png" alt="benchmark result figure gold"><div class="caption"><h3>Dimension effect</h3><p class="muted">WADI는 112 dimensions로 SWaT/MSL보다 훨씬 고차원이라 relation-aware modeling의 importance가 커집니다.</p></div></article><article class="card"><h3>논문이 읽어낸 benchmark insight</h3><ul><li><strong>Temporal modeling matters</strong>: DAGMM보다 RNN-based model이 SWaT/MSL에서 전반적으로 우세합니다.</li><li><strong>Parallel processing for long sequence</strong>: Transformer/GTA는 long sequence를 병렬로 다루며 강점을 보입니다.</li><li><strong>High dimension hurts naive reconstruction</strong>: WADI에서는 계산량과 feature explosion이 큰 병목입니다.</li><li><strong>Graph relation can win</strong>: GDN/GTA는 attribute relation이 강한 setting에서 상대적으로 좋은 결과를 냅니다.</li></ul></article></div></section>
+<section><div class="container grid-3"><article class="card"><h3>Precision / Recall / F1-score</h3><p class="muted">실무에서는 false alarm도 비용이지만, missed anomaly는 더 큰 비용일 수 있습니다. 논문이 Recall과 F1을 더 중시한 이유입니다.</p></article><article class="card"><h3>Point adjustment</h3><p class="muted">contiguous anomaly segment 중 일부만 탐지해도 전체 segment를 detected로 간주해 recall/F1이 올라갈 수 있습니다.</p></article><article class="card"><h3>Hyper-parameter effect</h3><p class="muted">down-sampling, window size, learning rate, threshold 전략이 benchmark 해석 자체를 바꿀 수 있습니다.</p></article></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="panel footer-card">다음 페이지: <a href="/guidelines/"><strong>Guidelines</strong></a> · 결과 figure는 <a href="/figures/"><strong>Figures</strong></a>에서 route별로 다시 볼 수 있습니다</div></div></footer>
+</div>
+<script src="../assets/js/data.js"></script><script src="../assets/js/site.js"></script>
+</body></html>

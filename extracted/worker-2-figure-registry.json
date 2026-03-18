@@ -1,0 +1,108 @@
+{
+  "figures": [
+    {
+      "kind": "figure",
+      "number": 1,
+      "caption": "Anomaly types in time-series data.",
+      "targetRoute": "/problem-space"
+    },
+    {
+      "kind": "figure",
+      "number": 2,
+      "caption": "The examples by equipment type: (a) A production equipment",
+      "targetRoute": "/applications"
+    },
+    {
+      "kind": "figure",
+      "number": 3,
+      "caption": "Smart energy management systems collect data from energy",
+      "targetRoute": "/applications"
+    },
+    {
+      "kind": "figure",
+      "number": 4,
+      "caption": "Flowchart of MapReduce model.",
+      "targetRoute": "/classical-limitations"
+    },
+    {
+      "kind": "figure",
+      "number": 5,
+      "caption": "A taxonomy of recent deep learning-based time-series anomaly detection methods. HTM, hierarchical temporal memory; RNN, recurrent",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "figure",
+      "number": 6,
+      "caption": "A mechanism of graph attention layer. Red circle is the final",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "figure",
+      "number": 7,
+      "caption": "An example of a three-layer dilated RNN with dilation 1, 2,",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "figure",
+      "number": 8,
+      "caption": "The examples of each type of anomaly criteria: (a) a reconstruction error; (b) a prediction error; and (c) a dissimilarity.",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "figure",
+      "number": 9,
+      "caption": "Experimental results on SWaT and MSL. The RNN-based and",
+      "targetRoute": "/benchmarks"
+    },
+    {
+      "kind": "figure",
+      "number": 10,
+      "caption": "Experimental results on SWaT, MSL, and WADI. The",
+      "targetRoute": "/benchmarks"
+    },
+    {
+      "kind": "figure",
+      "number": 11,
+      "caption": "Strategies for anomaly detection in time-series data:",
+      "targetRoute": "/guidelines"
+    }
+  ],
+  "tables": [
+    {
+      "kind": "table",
+      "number": 1,
+      "caption": "Description of the detailed classification of anomalies in time-series data.",
+      "targetRoute": "/problem-space"
+    },
+    {
+      "kind": "table",
+      "number": 2,
+      "caption": "Inter-correlation between variables.",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "table",
+      "number": 3,
+      "caption": "Modeling temporal context.",
+      "targetRoute": "/taxonomy"
+    },
+    {
+      "kind": "table",
+      "number": 4,
+      "caption": "Summary of datasets used in the experiments.",
+      "targetRoute": "/benchmarks"
+    },
+    {
+      "kind": "table",
+      "number": 5,
+      "caption": "Hyper-parameters values used for each method. The methods marked with \u2020 indicate their papers also provided the performances of some",
+      "targetRoute": "/benchmarks"
+    },
+    {
+      "kind": "table",
+      "number": 6,
+      "caption": "Anomaly detection accuracy in terms of precision (%), recall (%), and F1-score, on three datasets with ground-truth anomalies. * did not apply",
+      "targetRoute": "/benchmarks"
+    }
+  ]
+}

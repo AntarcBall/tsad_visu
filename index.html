@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TSAD Deep Study · Deep Learning for Anomaly Detection in Time-Series Data</title>
+  <meta name="description" content="논문 Deep Learning for Anomaly Detection in Time-Series Data: Review, Analysis, and Guidelines를 한국어로 깊게 학습하는 multi-URI interactive study page.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">TS</span>
+          <span>TSAD Deep Study</span>
+        </a>
+        <nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="panel hero-card">
+            <div class="eyebrow">Paper2Web × Math-Teacher 스타일 학습 경험</div>
+            <h1>Deep Learning for Anomaly Detection in Time-Series Data</h1>
+            <p class="lead">
+              이 사이트는 <strong>“Deep Learning for Anomaly Detection in Time-Series Data: Review, Analysis, and Guidelines”</strong>를
+              한국어로 깊게 재구성한 multi-URI study page입니다. 설명은 한국어로, 핵심 개념은 <span class="codeish">Anomaly detection</span>,
+              <span class="codeish">temporal dependency</span>, <span class="codeish">inter-correlation</span>, <span class="codeish">reconstruction error</span>
+              같은 tech term을 유지해 읽기 흐름과 전문성을 동시에 잡았습니다.
+            </p>
+            <div class="meta-row">
+              <span class="meta-pill">IEEE Access · 2021</span>
+              <span class="meta-pill">DOI 10.1109/ACCESS.2021.3107975</span>
+              <span class="meta-pill">23 pages</span>
+              <span class="meta-pill">PDF figure assets extracted</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="/background/">학습 시작</a>
+              <a class="btn secondary" href="/playground/">Quiz & Flashcards</a>
+              <a class="btn" href="Deep_Learning_for_Anomaly_Detection_in_Time-Series_Data_Review_Analysis_and_Guidelines.pdf">원문 PDF</a>
+            </div>
+            <div class="stack-top-lg">
+              <div class="badge" data-progress-summary></div>
+              <div class="progress-bar progress-bar-spaced"><div class="progress-fill" data-progress-fill></div></div>
+            </div>
+          </article>
+
+          <article class="panel figure-card">
+            <img src="assets/images/paper/benchmark-summary.jpg" alt="논문에서 추출한 벤치마크 요약 figure">
+            <div class="figure-meta">
+              <h3>학습 포인트</h3>
+              <p class="figure-caption">
+                이 논문은 단순 survey를 넘어서 <strong>모델 taxonomy</strong>, <strong>benchmark analysis</strong>, <strong>practitioner guidelines</strong>를 한 흐름으로 묶습니다.
+              </p>
+              <div class="pill-row">
+                <span class="pill">No one-size-fits-all</span>
+                <span class="pill">SWaT / WADI / MSL</span>
+                <span class="pill">AE / VAE / GAN / RNN / GNN / Transformer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Study map</div>
+              <h2 class="section-title">이 논문을 읽는 가장 좋은 순서</h2>
+            </div>
+            <div class="muted">각 페이지가 별도 URI를 가지므로 발표용/스터디용으로 바로 링크 공유할 수 있습니다.</div>
+          </div>
+          <div class="study-map">
+            <a class="map-link" href="/background/"><span><strong>01. Background</strong><br><span class="muted">anomaly 유형, time-series 특성, anomaly taxonomy</span></span><span>→</span></a>
+            <a class="map-link" href="/classical-limitations/"><span><strong>02. Classical Limitations</strong><br><span class="muted">Sec. IV의 classical method 한계와 deep learning으로 넘어가는 이유</span></span><span>→</span></a>
+            <a class="map-link" href="/applications/"><span><strong>03. Industrial Applications</strong><br><span class="muted">smart manufacturing, energy, cloud, structural monitoring</span></span><span>→</span></a>
+            <a class="map-link" href="/methods/"><span><strong>04. Methods Explorer</strong><br><span class="muted">inter-correlation / temporal context / anomaly criterion 관점 정리</span></span><span>→</span></a>
+            <a class="map-link" href="/benchmarks/"><span><strong>05. Benchmarks</strong><br><span class="muted">SWaT, WADI, MSL 비교와 논문 해석 포인트</span></span><span>→</span></a>
+            <a class="map-link" href="/guidelines/"><span><strong>06. Practitioner Guidelines</strong><br><span class="muted">real-time vs early warning, window vs incremental update</span></span><span>→</span></a>
+            <a class="map-link" href="/figures/"><span><strong>07. Figures Atlas</strong><br><span class="muted">figure/table를 route별로 다시 찾아보는 시각 자료 인덱스</span></span><span>→</span></a>
+            <a class="map-link" href="/glossary/"><span><strong>08. Glossary</strong><br><span class="muted">TSAD 핵심 tech term을 한국어 맥락으로 다시 정리</span></span><span>→</span></a>
+            <a class="map-link" href="/paper-map/"><span><strong>09. Paper Map</strong><br><span class="muted">논문 전체 구조, section-by-section 요약, 용어 묶음</span></span><span>→</span></a>
+            <a class="map-link" href="/about-paper/"><span><strong>10. About Paper</strong><br><span class="muted">authors, DOI, citation, license, provenance 맥락</span></span><span>→</span></a>
+            <a class="map-link" href="/playground/"><span><strong>11. Playground</strong><br><span class="muted">quiz, flashcards, 점수/진도 tracking</span></span><span>→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grid-4">
+          <div class="kpi"><span class="badge">핵심 메시지</span><div class="value">1</div><div>one-size-fits-all method는 없고, 데이터와 운영 목적에 맞춘 선택이 중요합니다.</div></div>
+          <div class="kpi"><span class="badge">분석 축</span><div class="value">3</div><div>inter-correlation, temporal context, anomaly criteria.</div></div>
+          <div class="kpi"><span class="badge">벤치마크</span><div class="value">3</div><div>SWaT, WADI, MSL를 통해 모델의 practical trade-off를 비교합니다.</div></div>
+          <div class="kpi"><span class="badge">학습 경험</span><div class="value" data-score>0</div><div>Playground에서 점수와 streak가 로컬에 저장됩니다.</div></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Paper highlights</div>
+              <h2 class="section-title">원문 PDF에서 추출한 figure로 보는 핵심 흐름</h2>
+            </div>
+          </div>
+          <div class="figure-grid">
+            <article class="figure-thumb">
+              <img src="assets/images/paper/anomaly-wave-3.jpg" alt="collective anomaly example from paper">
+              <div class="caption">
+                <h3>Anomaly 유형</h3>
+                <p class="muted">point / contextual / collective를 구분해야 어떤 model family가 필요한지 감이 잡힙니다.</p>
+              </div>
+            </article>
+            <article class="figure-thumb">
+              <img src="assets/images/paper/dilated-rnn.jpg" alt="dilated RNN figure from paper">
+              <div class="caption">
+                <h3>Temporal context</h3>
+                <p class="muted">dilated RNN, attention, hybrid model이 왜 장기 dependency에 필요한지 시각적으로 이해할 수 있습니다.</p>
+              </div>
+            </article>
+            <article class="figure-thumb">
+              <img src="assets/images/paper/results-bars-blue.jpg" alt="benchmark results figure from paper">
+              <div class="caption">
+                <h3>Benchmark insight</h3>
+                <p class="muted">WADI처럼 dimension이 커지면 graph-aware modeling의 효용이 더 커집니다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grid-3">
+          <article class="card">
+            <h3>왜 이 논문이 여전히 useful한가</h3>
+            <ul>
+              <li><strong>taxonomy</strong>만 나열하지 않고, 실제 model selection 기준을 함께 제공합니다.</li>
+              <li><strong>benchmark interpretation</strong>을 통해 dataset dimension과 relation strength의 영향을 설명합니다.</li>
+              <li><strong>deployment thinking</strong>—real-time과 early warning의 trade-off를 실무 언어로 정리합니다.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>이 사이트의 읽는 법</h3>
+            <ul>
+              <li>처음이면 <strong>Background → Classical Limitations → Methods → Guidelines</strong> 순으로 읽으세요.</li>
+              <li>이미 TSAD를 안다면 <strong>Benchmarks → Figures → Glossary</strong>로 약한 개념을 보강한 뒤 <strong>Playground</strong>로 기억을 고정하세요.</li>
+              <li>발표 자료가 필요하면 각 page URI를 독립 slide처럼 활용하고, <strong>About Paper</strong>에서 citation/provenance를 마무리하세요.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Tech term 유지 원칙</h3>
+            <ul>
+              <li>설명 문장은 한국어로 작성했습니다.</li>
+              <li><strong>Transformer, GNN, reconstruction error, point adjustment</strong> 같은 용어는 그대로 유지했습니다.</li>
+              <li>발표·스터디 시 원문과 용어 대응이 쉽게 되도록 설계했습니다.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="panel footer-card">
+          Source PDF 기반 정리 · figure assets extracted from PDF · static multi-URI study page.
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

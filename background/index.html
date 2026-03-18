@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Background · TSAD Deep Study</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar"><div class="topbar-inner"><a class="brand" href="/"><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a><nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav></div></header>
+    <main>
+      <section class="hero"><div class="container hero-grid"><article class="panel hero-card"><div class="eyebrow">Background</div><h1>Anomaly를 정의하는 순간, 모델 선택이 쉬워진다</h1><p class="lead">논문은 anomaly를 <strong>point</strong>, <strong>contextual</strong>, <strong>collective</strong>로 구분하고, time-series가 가진 <strong>temporality</strong>, <strong>dimensionality</strong>, <strong>nonstationarity</strong>, <strong>noise</strong>를 기본 배경으로 깝니다. 이 페이지는 그 “입문이지만 가장 중요한 부분”을 시각적으로 재정리합니다.</p><div class="badge" data-progress-summary></div><div class="progress-bar progress-bar-spaced"><div class="progress-fill" data-progress-fill></div></div></article><article class="panel hero-card"><div class="tabs" data-anomaly-tabs><button class="tab-btn" data-id="point">Point</button><button class="tab-btn" data-id="contextual">Contextual</button><button class="tab-btn" data-id="collective">Collective</button></div><div class="figure-inline"><img data-anomaly-image alt="anomaly example extracted from PDF"><div><h3 data-anomaly-title></h3><p class="muted" data-anomaly-summary></p><p class="callout" data-anomaly-note></p><p class="source-note">Source: paper Figure 1에서 추출한 anomaly example.</p></div></div></article></div></section>
+      <section><div class="container grid-4"><article class="mini-card"><h3>Temporality</h3><p class="muted">이상은 현재 값만이 아니라 앞뒤 맥락 속에서 정의됩니다.</p></article><article class="mini-card"><h3>Dimensionality</h3><p class="muted">multivariate에서는 변수 간 관계를 함께 읽어야 합니다.</p></article><article class="mini-card"><h3>Nonstationarity</h3><p class="muted">concept drift와 regime change는 false alarm을 유발할 수 있습니다.</p></article><article class="mini-card"><h3>Noise</h3><p class="muted">센서 noise와 실제 anomaly를 구분하는 기준 설계가 필요합니다.</p></article></div></section>
+      <section><div class="container grid-3"><article class="card"><h3>Classical approach가 막히는 지점</h3><ul><li>linear/statistical model은 <strong>high-dimensional multivariate structure</strong>를 다루는 데 한계가 큽니다.</li><li>distance-based model은 long-range temporal dependency를 직접 담기 어렵습니다.</li><li>label scarcity 때문에 supervised setup만으로는 실무 적용이 어렵습니다.</li></ul></article><article class="card"><h3>논문이 deep learning으로 넘어가는 이유</h3><ul><li>representation learning으로 <strong>large-scale sequence</strong>를 학습할 수 있습니다.</li><li>semi-supervised / unsupervised setup에 잘 맞습니다.</li><li>reconstruction / prediction / dissimilarity 등 다양한 scoring path를 설계할 수 있습니다.</li></ul></article><article class="card"><h3>이 배경 페이지에서 꼭 기억할 것</h3><ul><li><strong>“이상이 무엇인지”</strong>를 먼저 정의해야 합니다.</li><li>이후 모델 비교는 항상 <strong>data property</strong>와 <strong>운영 목적</strong>과 함께 읽어야 합니다.</li><li>그래야 <strong>Classical Limitations</strong> → Methods → Benchmarks → Guidelines가 연결됩니다.</li></ul></article></div></section>
+    </main>
+    <footer class="footer"><div class="container"><div class="panel footer-card">다음 페이지: <a href="/classical-limitations/"><strong>Classical Limitations</strong></a> · 이후 <a href="/applications/"><strong>Industrial Applications</strong></a>으로 넘어가세요</div></div></footer>
+  </div>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

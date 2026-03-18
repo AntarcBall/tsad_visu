@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary · TSAD Deep Study</title>
+  <meta name="description" content="TSAD 핵심 technical term를 한국어 설명과 함께 빠르게 복습할 수 있는 glossary page.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="page-shell">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/"><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a>
+    <nav class="nav-links">
+      <a class="nav-link" data-nav-link href="/">Overview</a>
+      <a class="nav-link" data-nav-link href="/background/">Background</a>
+      <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+      <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+      <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+      <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+      <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+      <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+      <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+      <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+      <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+      <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <article class="panel hero-card">
+        <div class="eyebrow">Glossary</div>
+        <h1>TSAD 용어를 <br>짧고 정확하게 다시 잡기</h1>
+        <p class="lead">
+          이 페이지는 <span class="codeish">time-series anomaly detection (TSAD)</span> 논문을 읽을 때 자꾸 다시 확인하게 되는 용어들을
+          한국어 설명으로 묶은 <strong>study-friendly glossary</strong>입니다. 설명은 한국어로 유지하되,
+          <span class="codeish">reconstruction error</span>, <span class="codeish">point adjustment</span>,
+          <span class="codeish">inter-correlation</span> 같은 핵심 tech term은 원문 그대로 살렸습니다.
+        </p>
+        <div class="meta-row">
+          <span class="meta-pill">Korean-first</span>
+          <span class="meta-pill">Tech terms preserved</span>
+          <span class="meta-pill">Quick review route</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#core-concepts">핵심 개념부터 보기</a>
+          <a class="btn secondary" href="/playground/">퀴즈로 고정하기</a>
+          <a class="btn" href="/methods/">Methods로 돌아가기</a>
+        </div>
+      </article>
+      <article class="panel hero-card">
+        <div class="eyebrow">How to use</div>
+        <div class="study-map">
+          <a class="map-link" href="#core-concepts"><span><strong>01. Core concepts</strong><br><span class="muted">anomaly, multivariate, temporality 같은 기본 축</span></span><span>↓</span></a>
+          <a class="map-link" href="#modeling"><span><strong>02. Modeling terms</strong><br><span class="muted">RNN, Transformer, GNN, TCN, ConvLSTM</span></span><span>↓</span></a>
+          <a class="map-link" href="#scoring"><span><strong>03. Scoring & metrics</strong><br><span class="muted">reconstruction error, prediction error, F1-score</span></span><span>↓</span></a>
+          <a class="map-link" href="#operations"><span><strong>04. Operations & deployment</strong><br><span class="muted">real-time, early warning, online update, denoising</span></span><span>↓</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="core-concepts">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Core concepts</div>
+          <h2 class="section-title">문제 정의를 이루는 기본 어휘</h2>
+        </div>
+        <div class="muted">Background / Paper Map / Benchmarks를 읽을 때 가장 자주 다시 찾게 되는 용어들입니다.</div>
+      </div>
+      <div class="grid-3">
+        <article class="card"><h3><span class="codeish">Anomaly detection</span></h3><p class="muted">정상 패턴에서 벗어나는 observation이나 segment를 식별하는 작업입니다. time-series에서는 값 하나보다 <strong>맥락</strong>이 더 중요할 수 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Time-series data</span></h3><p class="muted">시간 순서가 핵심 의미를 가지는 데이터입니다. 과거-현재-미래의 관계가 그대로 모델 설계에 들어갑니다.</p></article>
+        <article class="card"><h3><span class="codeish">Multivariate time series</span></h3><p class="muted">여러 센서·채널·변수가 동시에 기록되는 시계열입니다. 각 변수의 개별 변화뿐 아니라 <strong>변수 간 관계</strong>도 중요합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Point anomaly</span></h3><p class="muted">짧은 순간에 급격히 튀는 이상입니다. threshold 기반 탐지로 접근하기 쉬우나 context를 놓치면 오탐이 많아질 수 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Contextual anomaly</span></h3><p class="muted">수치 자체는 평범해도 현재 계절성·phase·운영 상태에서는 비정상인 경우입니다. temporal context modeling이 특히 중요합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Collective anomaly</span></h3><p class="muted">개별 point는 정상처럼 보여도 연속된 구간 전체가 비정상인 패턴입니다. segment-level reasoning과 window design이 필요합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Temporality</span></h3><p class="muted">시간 순서가 의미를 가진다는 성질입니다. 이전 상태를 얼마나 길게 기억하느냐가 모델 성능에 직접 연결됩니다.</p></article>
+        <article class="card"><h3><span class="codeish">Dimensionality</span></h3><p class="muted">변수 수가 많아질수록 관계 표현과 계산량이 급증하는 문제입니다. WADI 같은 고차원 dataset에서 특히 중요한 축입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Nonstationarity</span></h3><p class="muted">시간이 지나면서 데이터 분포나 정상 패턴 자체가 바뀌는 성질입니다. drift 대응 전략이 없으면 false alarm이 늘어납니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="modeling">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Modeling terms</div>
+          <h2 class="section-title">모델 구조를 읽을 때 필요한 용어</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card"><h3><span class="codeish">Inter-correlation</span></h3><p class="muted">여러 변수 사이의 상호관계입니다. sensor/actuator가 물리적으로 연결된 시스템에서는 이 관계를 무시하기 어렵습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Temporal dependency</span></h3><p class="muted">현재 상태가 과거 시점의 패턴에 의존하는 정도입니다. long-range dependency를 어떻게 잡는지가 RNN/Transformer의 핵심 차이 중 하나입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Dimensional reduction</span></h3><p class="muted">많은 변수를 더 적은 latent factor로 압축하는 전략입니다. 계산량은 줄지만 root cause 해석력은 떨어질 수 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">2D matrix representation</span></h3><p class="muted">covariance, similarity matrix처럼 변수 관계를 2차원 구조로 바꾸는 방식입니다. multivariate relation을 joint하게 반영할 때 유용합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Graph neural network (GNN)</span></h3><p class="muted">변수들을 node와 edge로 보고 관계 구조를 학습하는 모델입니다. relation-heavy industrial setting에서 특히 강점이 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Graph attention</span></h3><p class="muted">각 node가 어떤 이웃 node를 더 중요하게 봐야 하는지 attention score로 학습하는 방식입니다. root-cause 친화적인 해석을 돕습니다.</p></article>
+        <article class="card"><h3><span class="codeish">RNN / LSTM / GRU</span></h3><p class="muted">시퀀스를 순차적으로 읽으며 hidden state에 기억을 축적하는 계열입니다. temporal dependency modeling에 강하지만 병렬성은 약합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Dilated RNN</span></h3><p class="muted">skip connection과 dilation으로 더 긴 time horizon을 적은 단계로 보게 만드는 RNN 변형입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Temporal convolutional network (TCN)</span></h3><p class="muted">causal convolution과 dilation을 활용해 긴 receptive field를 확보하는 CNN 계열입니다. 병렬 처리 이점이 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">ConvLSTM</span></h3><p class="muted">LSTM 내부 연산을 convolution으로 바꿔 spatial + temporal 정보를 함께 다루는 hybrid 구조입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Transformer / self-attention</span></h3><p class="muted">sequence 전체 시점을 한 번에 참조하며 long-range dependency를 병렬로 학습하는 구조입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Latent space</span></h3><p class="muted">원본 입력을 압축해 표현한 내부 공간입니다. anomaly는 이 공간에서 normal cluster와 멀어지는 방식으로도 포착됩니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="scoring">
+    <div class="container grid-2">
+      <article class="card">
+        <div class="eyebrow">Scoring & metrics</div>
+        <h2 class="section-title">이상 여부를 숫자로 만드는 용어</h2>
+        <ul>
+          <li><strong><span class="codeish">Anomaly score</span></strong>: 모델이 현재 상태가 얼마나 비정상인지 수치로 표현한 값입니다.</li>
+          <li><strong><span class="codeish">Threshold</span></strong>: anomaly score가 이 값을 넘으면 이상으로 판정합니다.</li>
+          <li><strong><span class="codeish">Adaptive threshold</span></strong>: 데이터 변화에 따라 threshold를 동적으로 조정하는 방식입니다.</li>
+          <li><strong><span class="codeish">Reconstruction error</span></strong>: 입력과 복원 결과의 차이입니다. AE/VAE/GAN 계열에서 자주 쓰입니다.</li>
+          <li><strong><span class="codeish">Prediction error</span></strong>: 예측한 다음 시점과 실제 관측값의 차이입니다. early warning과 잘 연결됩니다.</li>
+          <li><strong><span class="codeish">Dissimilarity</span></strong>: cluster나 distribution 중심에서 얼마나 멀리 떨어졌는지를 뜻합니다.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="eyebrow">Evaluation metrics</div>
+        <h2 class="section-title">논문 결과표를 읽는 지표</h2>
+        <ul>
+          <li><strong><span class="codeish">Precision</span></strong>: 탐지한 것 중 실제 anomaly의 비율입니다.</li>
+          <li><strong><span class="codeish">Recall</span></strong>: 실제 anomaly 중 모델이 잡아낸 비율입니다.</li>
+          <li><strong><span class="codeish">F1-score</span></strong>: precision과 recall의 균형 지표입니다.</li>
+          <li><strong><span class="codeish">False positive</span></strong>: 정상인데 anomaly로 잘못 판단한 경우입니다.</li>
+          <li><strong><span class="codeish">False negative</span></strong>: anomaly인데 놓친 경우입니다.</li>
+          <li><strong><span class="codeish">Point adjustment</span></strong>: contiguous anomaly segment 중 일부라도 맞추면 segment 전체를 검출로 보는 평가 보정 방식입니다.</li>
+        </ul>
+        <p class="callout">실무에서는 Precision만 높다고 충분하지 않습니다. missed anomaly의 비용이 큰 domain에서는 Recall과 F1 해석이 더 중요해집니다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="operations">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Operations & deployment</div>
+          <h2 class="section-title">논문 후반부 guideline를 이해하는 운영 용어</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card"><h3><span class="codeish">Real-time detection</span></h3><p class="muted">이상이 생긴 즉시 잡아내는 전략입니다. latency와 false alarm cost가 중요합니다.</p></article>
+        <article class="card"><h3><span class="codeish">Early warning</span></h3><p class="muted">실제 고장 전에 precursor를 찾아 경고하는 전략입니다. lead time과 missed anomaly trade-off가 핵심입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Sliding window</span></h3><p class="muted">고정 길이 segment로 시계열을 잘라 모델에 넣는 방식입니다. window size는 가장 중요한 hyper-parameter 중 하나입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Incremental update</span></h3><p class="muted">새 데이터가 들어올 때마다 상태를 조금씩 갱신하는 방식입니다. streaming 환경과 잘 맞습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Batch learning</span></h3><p class="muted">일정량의 데이터를 모아서 재학습하는 방식입니다. 재현성과 관리가 쉽지만 drift 대응은 느릴 수 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Online update</span></h3><p class="muted">운영 중 모델을 계속 적응시키는 전략입니다. drift에 강하지만 contamination과 forgetting 위험이 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Denoising</span></h3><p class="muted">노이즈를 줄여 false alarm을 낮추는 전처리입니다. 너무 강하면 약한 precursor까지 지울 수 있습니다.</p></article>
+        <article class="card"><h3><span class="codeish">Predictive maintenance (PdM)</span></h3><p class="muted">설비가 실제로 고장 나기 전에 이상 신호를 이용해 maintenance timing을 앞당기는 전략입니다.</p></article>
+        <article class="card"><h3><span class="codeish">Root cause</span></h3><p class="muted">이상 현상을 실제로 일으킨 원인 변수나 설비를 뜻합니다. graph-based relation modeling이 이 해석을 돕는 경우가 많습니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid-2">
+      <article class="card">
+        <h3>이 glossary를 언제 쓰면 좋은가</h3>
+        <ul>
+          <li><strong>논문 재독 전</strong>: 핵심 용어를 3분 안에 refresh</li>
+          <li><strong>스터디 발표 전</strong>: 영어 tech term과 한국어 설명 매칭 점검</li>
+          <li><strong>Benchmarks 읽기 전</strong>: metric과 threshold 관련 용어 재확인</li>
+          <li><strong>Guidelines 읽기 전</strong>: real-time / early warning / online update 의미 정리</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>다음 추천 경로</h3>
+        <ul>
+          <li><a href="/methods/"><strong>Methods</strong></a> — 용어를 실제 model family에 연결</li>
+          <li><a href="/benchmarks/"><strong>Benchmarks</strong></a> — metric이 결과 해석에서 어떻게 쓰이는지 확인</li>
+          <li><a href="/guidelines/"><strong>Guidelines</strong></a> — 운영 용어를 실제 선택 시나리오로 번역</li>
+          <li><a href="/playground/"><strong>Playground</strong></a> — 퀴즈와 flashcard로 기억 고정</li>
+        </ul>
+        <p class="callout">좋은 TSAD 설명은 “모델 이름 암기”가 아니라 “문제 구조를 어떤 용어로 설명하느냐”에서 시작됩니다.</p>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="panel footer-card">다음 추천: <a href="/methods/"><strong>Methods</strong></a>에서 이 용어들이 실제 taxonomy에서 어떻게 연결되는지 확인하세요.</div>
+  </div>
+</footer>
+</div>
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

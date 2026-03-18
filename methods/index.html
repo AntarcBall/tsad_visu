@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Methods · TSAD Deep Study</title><link rel="stylesheet" href="../assets/css/style.css"></head>
+<body>
+<div class="page-shell">
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="/"><span class="brand-mark">TS</span><span>TSAD Deep Study</span></a><nav class="nav-links">
+          <a class="nav-link" data-nav-link href="/">Overview</a>
+          <a class="nav-link" data-nav-link href="/background/">Background</a>
+          <a class="nav-link" data-nav-link href="/classical-limitations/">Classical Limits</a>
+          <a class="nav-link" data-nav-link href="/applications/">Applications</a>
+          <a class="nav-link" data-nav-link href="/methods/">Methods</a>
+          <a class="nav-link" data-nav-link href="/benchmarks/">Benchmarks</a>
+          <a class="nav-link" data-nav-link href="/guidelines/">Guidelines</a>
+          <a class="nav-link" data-nav-link href="/figures/">Figures</a>
+          <a class="nav-link" data-nav-link href="/glossary/">Glossary</a>
+          <a class="nav-link" data-nav-link href="/paper-map/">Paper Map</a>
+          <a class="nav-link" data-nav-link href="/about-paper/">About Paper</a>
+          <a class="nav-link" data-nav-link href="/playground/">Playground</a>
+        </nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><article class="panel hero-card"><div class="eyebrow">Methods explorer</div><h1>모델을 architecture가 아니라 <br>문제 구조로 읽기</h1><p class="lead">논문은 최신 deep anomaly detection model을 세 축으로 해석합니다: <strong>inter-correlation between variables</strong>, <strong>modeling temporal context</strong>, <strong>anomaly criteria</strong>. 아래 explorer는 이 프레임으로 모델을 필터링할 수 있게 구성했습니다.</p><div class="filter-bar"><div class="filter-group"><label>Family</label><select data-filter-family><option value="">All</option><option>AE</option><option>VAE</option><option>GAN</option><option>RNN</option><option>GNN</option><option>Transformer/GNN</option><option>RNN/VAE</option></select></div><div class="filter-group"><label>Temporal</label><select data-filter-temporal><option value="">All</option><option value="none">none</option><option value="rnn">rnn</option><option value="hybrid">hybrid</option><option value="attention">attention</option></select></div><div class="filter-group"><label>Criterion</label><select data-filter-criterion><option value="">All</option><option value="reconstruction">reconstruction</option><option value="prediction">prediction</option><option value="dissimilarity">dissimilarity</option></select></div></div></article><article class="panel hero-card"><div class="figure-inline"><img src="../assets/images/paper/graph-attention.jpg" alt="graph attention figure from paper"><div><h3>Graph attention intuition</h3><p class="muted">relation strength가 강한 industrial dataset에서는 <strong>graph structure learning</strong>이 실제로 성능 차이를 만들 수 있습니다.</p><p class="callout">논문은 WADI처럼 high-dimensional relation-heavy setting에서 GNN 계열의 장점을 강조합니다.</p></div></div></article></div></section>
+<section><div class="container"><div class="panel card"><h3>🎮 Simulator mission unlock</h3><p class="muted">각 method 카드는 이제 바로 <strong>simulator route</strong>로 연결됩니다. 필터로 후보를 좁힌 뒤, 카드를 클릭해 <strong>interactive lab</strong>에서 anomaly score 흐름을 바로 확인해 보세요.</p></div><div class="model-grid stack-top-md" data-model-grid></div></div></section>
+<section><div class="container"><article class="result-box"><strong>새 기능 · Method Lab</strong><div class="stack-top-sm muted">각 모델 카드 아래의 <strong>Simulator 열기</strong> 버튼으로 들어가면 toy controls를 바꾸며 relation, temporal context, threshold 변화가 점수판에 즉시 반영됩니다.</div></article></div></section>
+<section><div class="container grid-3"><article class="figure-thumb"><img src="../assets/images/paper/dilated-rnn.jpg" alt="dilated rnn figure"><div class="caption"><h3>Dilated RNN</h3><p class="muted">skip connection과 dilation으로 장·단기 dependency를 함께 잡습니다.</p></div></article><article class="figure-thumb"><img src="../assets/images/paper/latent-reconstruction.jpg" alt="latent reconstruction figure"><div class="caption"><h3>Reconstruction path</h3><p class="muted">AE/VAE/GAN 계열은 입력과 복원 결과의 discrepancy를 anomaly score로 연결합니다.</p></div></article><article class="figure-thumb"><img src="../assets/images/paper/dissimilarity-space.jpg" alt="dissimilarity space figure"><div class="caption"><h3>Dissimilarity path</h3><p class="muted">latent/distribution space에서 멀리 벗어난 샘플을 이상으로 보는 접근입니다.</p></div></article></div></section>
+<section><div class="container grid-2"><article class="card"><h3>Methods page 요약</h3><ul><li><strong>raw / matrix / graph</strong> 중 어떤 방식으로 variable relation을 정의할지 먼저 결정합니다.</li><li><strong>RNN / CNN / attention / hybrid</strong> 중 어떤 temporal context model이 필요한지 고릅니다.</li><li>최종 score는 <strong>reconstruction</strong>, <strong>prediction</strong>, <strong>dissimilarity</strong>로 연결됩니다.</li></ul></article><article class="card"><h3>실무적 읽기 팁</h3><ul><li>benchmark 결과만 보지 말고, 해당 모델이 어떤 <strong>bias</strong>를 갖는지 보세요.</li><li>예: relation-heavy면 GNN, long sequence면 attention, compact baseline이면 AE/VAE.</li><li>그리고 마지막에는 항상 <strong>threshold strategy</strong>로 돌아옵니다.</li></ul></article></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="panel footer-card">다음 페이지: <a href="/benchmarks/"><strong>Benchmarks</strong></a> · 용어가 막히면 <a href="/glossary/"><strong>Glossary</strong></a>를 함께 보세요</div></div></footer>
+</div>
+<script src="../assets/js/data.js"></script><script src="../assets/js/site.js"></script>
+
+</body></html>

@@ -1,0 +1,94 @@
+{
+  "paper": {
+    "title": "Deep Learning for Anomaly Detection in Time-Series Data: Review, Analysis, and Guidelines",
+    "year": 2021,
+    "doi": "10.1109/ACCESS.2021.3107975"
+  },
+  "routes": [
+    {
+      "uri": "/",
+      "title": "Paper Overview",
+      "paperAnchors": ["Abstract", "I. Introduction"],
+      "modules": ["PaperHero", "PaperAtAGlance", "ContributionCards"]
+    },
+    {
+      "uri": "/problem-space",
+      "title": "Anomaly Detection Problem Space",
+      "paperAnchors": ["I. Introduction", "II. Background", "Fig. 1", "Table 1"],
+      "modules": ["AnomalyTypeExplorer", "ChallengeCards"]
+    },
+    {
+      "uri": "/applications",
+      "title": "Industrial Applications",
+      "paperAnchors": ["III. Industrial Applications", "Fig. 2", "Fig. 3"],
+      "modules": ["IndustryScenarioTabs", "FailureCostMatrix"]
+    },
+    {
+      "uri": "/classical-limitations",
+      "title": "Why Classical Methods Break",
+      "paperAnchors": ["IV. Challenges of Classical Approaches", "Fig. 4"],
+      "modules": ["ClassicalVsDeepTable", "FailureModeCallouts"]
+    },
+    {
+      "uri": "/taxonomy",
+      "title": "Deep Learning Taxonomy",
+      "paperAnchors": ["V. Deep Learning for Anomaly Detection", "Fig. 5", "Table 2", "Table 3", "Fig. 6", "Fig. 7", "Fig. 8"],
+      "modules": ["TaxonomyExplorer", "ModelFamilyCards", "CorrelationStrategyMatrix", "TemporalContextMatrix", "MechanismDeepDives"]
+    },
+    {
+      "uri": "/benchmarks",
+      "title": "Datasets and Comparative Results",
+      "paperAnchors": ["VI. Comparative Reviews", "Table 4", "Table 5", "Table 6", "Fig. 9", "Fig. 10"],
+      "modules": ["DatasetSelector", "BenchmarkTableViewer", "FindingHighlights", "ModelDatasetFitChart"]
+    },
+    {
+      "uri": "/guidelines",
+      "title": "Practitioner Playbook",
+      "paperAnchors": ["VII. Guidelines for Practitioners", "Fig. 11"],
+      "modules": ["DecisionWizard", "ThresholdTradeoffSlider", "TrainingStrategyChecklist"]
+    },
+    {
+      "uri": "/figures",
+      "title": "Figure & Table Atlas",
+      "paperAnchors": ["Fig. 1-11", "Table 1-6"],
+      "modules": ["FigureAtlas", "FigureCardGrid"]
+    },
+    {
+      "uri": "/glossary",
+      "title": "Terminology & Model Glossary",
+      "paperAnchors": ["Cross-page terminology"],
+      "modules": ["GlossaryLookup", "RelatedPageLinks"]
+    },
+    {
+      "uri": "/about-paper",
+      "title": "Metadata & Provenance",
+      "paperAnchors": ["Front matter"],
+      "modules": ["CitationCard", "AuthorBlock", "LicenseNote"]
+    }
+  ],
+  "priorityBuildOrder": [
+    "/",
+    "/taxonomy",
+    "/benchmarks",
+    "/guidelines",
+    "/applications",
+    "/problem-space",
+    "/figures",
+    "/glossary",
+    "/about-paper"
+  ],
+  "interactiveModules": [
+    "PaperAtAGlance",
+    "AnomalyTypeExplorer",
+    "IndustryScenarioTabs",
+    "ClassicalVsDeepTable",
+    "TaxonomyExplorer",
+    "MechanismDeepDives",
+    "DatasetSelector",
+    "BenchmarkTableViewer",
+    "DecisionWizard",
+    "ThresholdTradeoffSlider",
+    "FigureAtlas",
+    "GlossaryLookup"
+  ]
+}
