@@ -1,5 +1,7 @@
 (function () {
   const storageKey = "tsad-study-progress-v1";
+  const sitePrefix = window.__TSAD_SITE_PREFIX__ || "";
+  const canonicalRoute = window.__TSAD_CANONICAL_ROUTE__ || null;
   const defaultState = {
     visited: [],
     score: 0,
@@ -27,11 +29,22 @@
 
   function normalizePath(pathname) {
     if (!pathname) return "/";
-    const clean = pathname.endsWith("index.html")
-      ? pathname.replace(/index\.html$/, "")
-      : pathname;
+    const [pathOnly] = pathname.split(/[?#]/, 1);
+    const clean = pathOnly.endsWith("index.html")
+      ? pathOnly.replace(/index\.html$/, "")
+      : pathOnly;
     if (clean === "") return "/";
     return clean.endsWith("/") ? clean : clean + "/";
+  }
+
+  function currentRoute() {
+    return canonicalRoute || normalizePath(location.pathname);
+  }
+
+  function resolveSitePath(pathname) {
+    if (!pathname || pathname === "/") return sitePrefix || "./";
+    if (!pathname.startsWith("/")) return pathname;
+    return `${sitePrefix}${pathname.slice(1)}`;
   }
 
   function loadState() {
@@ -54,7 +67,7 @@
 
   function markVisited() {
     const state = loadState();
-    const current = normalizePath(location.pathname);
+    const current = currentRoute();
     if (!state.visited.includes(current)) state.visited.push(current);
     saveState(state);
   }
@@ -140,7 +153,7 @@
     const nextPath =
       (data.routeOrder || []).find((route) => !state.visited.includes(route)) ||
       "/";
-    nextLink.href = nextPath;
+    nextLink.href = resolveSitePath(nextPath);
     nextLink.textContent =
       state.visited.length >= total
         ? "Overview로 돌아가 복습 마무리"
@@ -179,9 +192,9 @@
   }
 
   function setupNav() {
-    const current = normalizePath(location.pathname);
+    const current = currentRoute();
     document.querySelectorAll("[data-nav-link]").forEach((link) => {
-      const href = normalizePath(link.getAttribute("href") || "/");
+      const href = normalizePath(link.dataset.route || link.getAttribute("href") || "/");
       if (href === current) link.classList.add("active");
     });
   }
@@ -202,7 +215,7 @@
         .forEach((btn) =>
           btn.classList.toggle("active", btn.dataset.id === selected.id),
         );
-      if (image) image.src = selected.image;
+      if (image) image.src = resolveSitePath(selected.image);
       if (title) title.textContent = selected.title;
       if (summary) summary.textContent = selected.summary;
       if (note) note.textContent = selected.note;
@@ -245,7 +258,7 @@
               <ul>${model.cautions.map((item) => `<li>${item}</li>`).join("")}</ul>
             </div>
           </div>
-          ${model.route ? `<div class="method-card-actions"><a class="btn secondary" href="${model.route}">Simulator 열기</a></div>` : ""}
+          ${model.route ? `<div class="method-card-actions"><a class="btn secondary" href="${resolveSitePath(model.route)}">Simulator 열기</a></div>` : ""}
         </article>`;
     }
 
